@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Write</title>
+    <% include head%>
+</head>
+
+<body>
+    <%-include('bar',{username:username})%>
+    <div class=" container">
+        <form action="/article/add" method="post" class="">
+            <input type="hidden" name="id" id="id" value="<%-item.id%>">
+            <input type="hidden" name="page" id="page" value="<%-item.page%>">
+            <div class="form-group col-sm-5 col-sm-offset-2">
+                <label for="my-input">title</label>
+                <input id="my-input" class="form-control" type="text" name="title" value="<%=item.title%>">
+            </div>
+            <div class="form-group col-sm-5 col-sm-offset-2">
+                <div class="form-group">
+                    <label for="my-textarea">article</label>
+                    <textarea id="my-textarea" class="form-control" name="article" rows="5"><%-item.article%></textarea>
+                </div>
+            </div>
+            <div class="form-group  col-sm-5 col-sm-offset-2">
+                <div class="col-sm-5">
+                    <%if(item.id){%>
+                        <input type="submit" class="form-control btn-info"  value="修改">
+                    <%}else{%>
+                        <input type="submit" class="form-control btn-info"  value="发布">
+                    <%}%>
+                </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

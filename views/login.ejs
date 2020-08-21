@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include head %>
+    <title>登录页面</title>
+    <style>
+        body{background-color: cadetblue;}
+    </style>
+</head>
+<body>
+
+    <%include header%>
+    <form class="form-horizontal col-sm-9 col-sm-offset-3" action="/users/login" method="post" >
+        <div class="form-group col-sm-8 col-sm-offset-1">
+          <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+          <div class="col-sm-5">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="请输入邮箱" name="email">
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-1">
+          <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+          <div class="col-sm-5">
+            <input type="password" class="form-control" id="inputPassword1" placeholder="请输入密码" name="passWord">
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-1">
+          <label for="inputPassword3" class="col-sm-2 control-label"></label>
+          <div class="col-sm-5">
+            <input type="submit" class="form-control btn-info"  value="登录">
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-1">
+            <label for="inputPassword3" class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+              <p class="">账号或者密码错误请重新登录</p>
+                <p>没有账号，<a class=" btn-link" href="/register">立即注册</a></p>
+            </div>
+      </form>
+</body>
+</html>

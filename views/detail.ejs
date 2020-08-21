@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include head%>
+    <title>详情页</title>
+</head>
+<body>
+    <%-include('bar',{username:username})%>
+
+    <div class=" container">
+        <div class="jumbotron">
+            <h1><%=item.title%></h1>
+            <p><%=item.article%></p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+          </div>
+    </div>
+  
+</body>
+    
+
+</html>

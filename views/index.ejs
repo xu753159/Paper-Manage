@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>首页</title>
+    <%include head%>
+    <style>
+      body{background-color: cadetblue;}
+    </style>
+  </head>
+  <body>
+    <%-include('bar',{username:username})%>
+    <div class=" container">
+      <table class="table">
+        <caption>Optional table caption.</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>title</th>
+            <th>username</th>
+            <th>time</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <%for(var i=0;i<data.list.length;i++){%>
+              <tr>
+                <th scope="row"><%=i+1%></th>
+                <td><a href="/detail?id=<%=data.list[i].id%>"><%=data.list[i].title%></a></td>
+                <td><%=data.list[i].username%></td>
+                <td><%=data.list[i].time%></td>
+                <td>
+                  <a href="/write?id=<%=data.list[i].id%>&page=<%=data.curPage%>">编辑</a>
+                  <a href="/article/delete?id=<%=data.list[i].id%>&page=<%=data.curPage%>">删除</a>
+                </td>
+              </tr>
+            <%}%>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation" class=" col-sm-offset-4">
+        <ul class="pagination">
+          <li>
+            <a href="/?page=<%=data.prePage%>" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <%for (var i=1;i<=data.total;i++){%>
+            <li><a href="/?page=<%=i%>"><%=i%></a></li>
+          <%}%>
+          <li>
+            <a href="/?page=<%=data.nextPage%>" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
